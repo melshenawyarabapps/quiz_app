@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
-import '../home_screen.dart';
+import 'package:provider/provider.dart';
+import 'package:quiz_app_test/my_provider.dart';
 
-void main(){
-  runApp(MyApp());
+import 'home_screen.dart';
+
+void main() {
+  runApp(
+    ChangeNotifierProvider(
+      create: (BuildContext context){
+        return MyProvider();
+      },
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -11,6 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: HomeScreen(),
     );
   }

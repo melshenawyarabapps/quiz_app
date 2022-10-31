@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 
 class Question extends StatelessWidget {
-   Question({required this.question}) ;
-String question;
+   Question({
+    Key? key,
+    required this.question,
+  }) : super(key: key);
+
+  String question;
+
   @override
   Widget build(BuildContext context) {
-    return  Text(
-      '$question',
+    return Text(
+      question,
       style: TextStyle(
         color: Colors.black,
+        fontWeight: FontWeight.bold,
         fontSize: 16,
-        fontWeight: FontWeight.w800,
       ),
     );
   }
